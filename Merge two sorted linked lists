@@ -1,0 +1,42 @@
+   class Node
+    {
+        int data;
+        Node next;
+        Node(int d) {data = d; next = null; }
+    }
+*/
+
+class LinkedList
+{
+    //Function to merge two sorted linked list.
+    Node sortedMerge(Node head1, Node head2) {
+     Node sort = new Node(0);
+     Node head = sort;
+     while(true)
+     {
+         if(head1==null)
+         {
+             head.next=head2;
+             break;
+         }
+         if(head2==null)
+         {
+             head.next=head1;
+             break;
+         }
+         if(head1.data<=head2.data)
+         {
+            head.next=head1;
+            head= head1;
+            head1=head.next;
+         }
+         else
+         {
+            head.next=head2;
+            head= head2;
+            head2=head.next;
+         }
+     }
+     return(sort.next);
+   } 
+}
