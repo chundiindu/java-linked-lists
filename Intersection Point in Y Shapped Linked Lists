@@ -32,4 +32,29 @@ class Intersect
 }
 }
 
+Another Method through Hshset
+
+public class Solution {
+    public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
+        
+         HashSet<ListNode> hs =  new HashSet<>();
+    ListNode ls = headA;
+    ListNode ln = headB;
+    while(ls != null){
+        
+        hs.add(ls);
+        ls = ls.next;
+    }
+  while(ln != null){
+      if(hs.contains(ln))
+          return ln;
+      
+      ln = ln.next;
+  }  
+return null;
+
+}
+}
+        
+
 
