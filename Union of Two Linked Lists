@@ -1,0 +1,33 @@
+lass Sol
+{
+	public static Node findUnion(Node head1,Node head2)
+	{
+	    HashSet<Integer> h = new HashSet<Integer>();
+	    Node n1= head1;
+	    Node n2=head2;
+	    LinkedList result = new LinkedList();
+	    while(n1!=null)
+	    {
+	        h.add(n1.data);
+	        n1=n1.next;
+	    }
+	    while(n2!=null)
+	    {
+	        h.add(n2.data);
+	        n2=n2.next;
+	    }
+	    Iterator<Integer> it=h.iterator();
+	    Node head = new Node(-1);
+	    Node temp = head;
+	   // hasNext() - Returns true if the iteration has more elements. next() - Returns the next element in the iteration.
+	    while(it.hasNext())
+	    {
+	        temp.next=new Node(it.next());
+	        temp=temp.next;
+	        
+	    }
+	    return head.next;
+	 
+	    
+	}
+}
